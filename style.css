@@ -1,0 +1,437 @@
+/* ============================================================
+   Simple Object Counter - Custom Styles
+   Theme: Dark with Cyan/Violet gradient accents
+   ============================================================ */
+
+/* ---------- Google Font ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ---------- Global ---------- */
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Hide Streamlit default elements */
+#MainMenu {visibility: hidden;}
+header {visibility: hidden;}
+footer {visibility: hidden;}
+
+/* Main container */
+.block-container {
+    padding-top: 1rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 1200px !important;
+}
+
+/* ---------- Hero Header ---------- */
+.hero-header {
+    text-align: center;
+    padding: 2.5rem 1rem 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(6,182,212,0.08) 0%, rgba(139,92,246,0.08) 100%);
+    border: 1px solid rgba(6,182,212,0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(6,182,212,0.06) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(139,92,246,0.06) 0%, transparent 50%);
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.hero-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #06B6D4, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    position: relative;
+    letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: #9CA3AF;
+    margin-top: 0.4rem;
+    position: relative;
+    font-weight: 300;
+}
+
+/* ---------- Sidebar ---------- */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0d0d1a 0%, #0a0a15 100%) !important;
+    border-right: 1px solid rgba(6,182,212,0.12) !important;
+}
+
+section[data-testid="stSidebar"] .block-container {
+    padding-top: 1.5rem !important;
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(6,182,212,0.15);
+}
+
+.sidebar-header h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #06B6D4, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.sidebar-section {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.sidebar-section-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #06B6D4;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+}
+
+/* ---------- Metric Cards ---------- */
+.metric-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.metric-card {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(6,182,212,0.06) 0%, rgba(139,92,246,0.06) 100%);
+    border: 1px solid rgba(6,182,212,0.15);
+    border-radius: 16px;
+    padding: 1.25rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card:hover {
+    border-color: rgba(6,182,212,0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(6,182,212,0.1);
+}
+
+.metric-card.primary {
+    border-color: rgba(6,182,212,0.3);
+    background: linear-gradient(135deg, rgba(6,182,212,0.12) 0%, rgba(139,92,246,0.08) 100%);
+}
+
+.metric-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #06B6D4, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.metric-card.primary .metric-value {
+    font-size: 3rem;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+/* ---------- Accuracy Card ---------- */
+.accuracy-card {
+    background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(6,182,212,0.06) 100%);
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.accuracy-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #10B981;
+    line-height: 1.2;
+}
+
+.accuracy-label {
+    font-size: 0.8rem;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.accuracy-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #9CA3AF;
+}
+
+/* ---------- Pipeline Step Cards ---------- */
+.step-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    border-color: rgba(6,182,212,0.2);
+    background: rgba(6,182,212,0.03);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #06B6D4, #8B5CF6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.step-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #E5E7EB;
+}
+
+.step-desc {
+    font-size: 0.78rem;
+    color: #6B7280;
+    font-weight: 400;
+}
+
+/* ---------- Tab Styling ---------- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.02);
+    border-radius: 12px;
+    padding: 0.35rem;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 8px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #9CA3AF;
+    transition: all 0.2s ease;
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, rgba(6,182,212,0.15), rgba(139,92,246,0.15)) !important;
+    color: #06B6D4 !important;
+    border-color: transparent !important;
+}
+
+/* ---------- Image Display ---------- */
+.image-container {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- DataFrame Styling ---------- */
+.stDataFrame {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+/* ---------- Buttons ---------- */
+.stButton > button {
+    width: 100%;
+    background: linear-gradient(135deg, #06B6D4, #8B5CF6) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.7rem 1.5rem !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(6,182,212,0.25) !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 25px rgba(6,182,212,0.35) !important;
+}
+
+/* ---------- Expander ---------- */
+.streamlit-expanderHeader {
+    background: rgba(255,255,255,0.02) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255,255,255,0.06) !important;
+    font-weight: 600 !important;
+}
+
+/* ---------- Divider ---------- */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(6,182,212,0.3), rgba(139,92,246,0.3), transparent);
+    margin: 1.5rem 0;
+    border: none;
+}
+
+/* ---------- Info Badges ---------- */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-cyan {
+    background: rgba(6,182,212,0.15);
+    color: #06B6D4;
+    border: 1px solid rgba(6,182,212,0.3);
+}
+
+.badge-violet {
+    background: rgba(139,92,246,0.15);
+    color: #8B5CF6;
+    border: 1px solid rgba(139,92,246,0.3);
+}
+
+.badge-green {
+    background: rgba(16,185,129,0.15);
+    color: #10B981;
+    border: 1px solid rgba(16,185,129,0.3);
+}
+
+/* ---------- Welcome Card ---------- */
+.welcome-card {
+    background: linear-gradient(135deg, rgba(6,182,212,0.05) 0%, rgba(139,92,246,0.05) 100%);
+    border: 1px solid rgba(6,182,212,0.12);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.welcome-card h3 {
+    color: #E5E7EB;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-card p {
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+.welcome-steps {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.welcome-step {
+    text-align: center;
+    padding: 1rem;
+}
+
+.welcome-step-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-step-text {
+    font-size: 0.85rem;
+    color: #9CA3AF;
+    font-weight: 500;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.02);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(6,182,212,0.3);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(6,182,212,0.5);
+}
+
+/* ---------- Responsive for projector ---------- */
+@media (min-width: 1600px) {
+    .hero-title { font-size: 3rem; }
+    .metric-value { font-size: 3rem; }
+    .metric-card.primary .metric-value { font-size: 3.5rem; }
+}
